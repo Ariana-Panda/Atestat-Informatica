@@ -1,0 +1,138 @@
+body, html {
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #6aa6ff;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+    transition: top 0.3s;
+    margin: auto;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+header {
+    background-color: #ffffff;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 70px;
+    padding-bottom: 1px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: 1px 1px 10px 1px #eeeeee;
+}
+
+.container, .content {
+    background-color: white;
+    
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 20px;
+    text-align: justify;
+    box-shadow: 1px 1px 10px 1px #eeeeee;
+    border-radius: 12px;
+}
+
+h1 {
+    color: #6aa6ff;
+}
+
+h2 {
+    text-align: center;
+    color:#6aa6ff
+}
+
+.parallax {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+}
+
+.plamanii-page .parallax-plamani-1 {
+    margin:auto;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    padding: 20px;
+    background-image: url('imagini/poza_plamani.jpg');
+}
+
+.circulatia-page .parallax-circulatie-1 {
+    margin:auto;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    padding: 20px;
+    background-image: url('imagini/poza_circulatie.jpg');
+}
+
+.boli-page .parallax-boli-1 {
+    margin:auto;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    padding: 20px;
+    background-image: url('imagini/poza_boli.avif');
+}
+
+.index-page .parallax-index-1 {
+    margin:auto;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    padding: 20px;
+    background-image: url('imagini/poza_index.jpg');
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #6aa6ff;
+    padding: 20px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin: auto;
+}
+
+h4 .sep{
+    height:1px;
+    width: 100%;
+    display: inline-block;
+    background: #c9c7c7;
+}
+
+.container, .imagine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    background-color: #f0f0f0;
+    max-width: 90%;
+    margin: auto;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+
