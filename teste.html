@@ -1,0 +1,149 @@
+<!DOCTYPE html> <!-- Specifică tipul documentului HTML5 -->
+<html lang="ro"> <!-- Setează limba documentului ca fiind româna -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemul Respirator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</head>
+<body class="boli-page">
+    <header>
+        <h1>Boli</h1>
+    </header>
+
+    <nav id="navbar"> <!-- Meniul de navigare al site-ului -->
+        <a href="index.html">Acasă</a>
+        <a href="plamanii.html">Plamanii</a>
+        <a href="circulatia.html">Circulatia</a>
+        <a href="boli.html">Boli</a>
+        <a href="teste.html">Teste</a>
+    </nav>
+    
+    <main class="container"> <!-- Conținutul principal al paginii -->
+        <form id="quiz-form"> <!-- Formularul testului grilă -->
+
+            <!-- Întrebare 1 -->
+            <div class="question" data-correct="c">
+                <p>1. Ce organ principal al sistemului respirator realizează schimbul de gaze?</p>
+                <label><input type="radio" name="q1" value="a"> Inima</label>
+                <label><input type="radio" name="q1" value="b"> Ficatul</label>
+                <label><input type="radio" name="q1" value="c"> Plămânii</label>
+            </div>
+
+            <!-- Întrebarea 2 -->
+            <div class="question" data-correct="b">
+                <p>2. Ce structură conectează laringele cu bronhiile?</p>
+                <label><input type="radio" name="q2" value="a"> Alveolele</label>
+                <label><input type="radio" name="q2" value="b"> Traheea</label>
+                <label><input type="radio" name="q2" value="c"> Esofagul</label>
+            </div>
+
+            <!-- Întrebarea 3 -->
+            <div class="question" data-correct="a">
+                <p>3. Unde are loc schimbul de oxigen și dioxid de carbon?</p>
+                <label><input type="radio" name="q3" value="a"> În alveole</label>
+                <label><input type="radio" name="q3" value="b"> În bronhii</label>
+                <label><input type="radio" name="q3" value="c"> În laringe</label>
+            </div>
+
+            <!-- Întrebarea 4 -->
+            <div class="question" data-correct="b">
+                <p>4. Ce gaz este eliminat în timpul expirului?</p>
+                <label><input type="radio" name="q4" value="a"> Oxigen</label>
+                <label><input type="radio" name="q4" value="b"> Dioxid de carbon</label>
+                <label><input type="radio" name="q4" value="c"> Azot</label>
+            </div>
+
+            <!-- Întrebarea 5 -->
+            <div class="question" data-correct="c">
+                <p>5. Care este rolul principal al sistemului respirator?</p>
+                <label><input type="radio" name="q5" value="a"> Reglarea temperaturii corpului</label>
+                <label><input type="radio" name="q5" value="b"> Digestia alimentelor</label>
+                <label><input type="radio" name="q5" value="c"> Schimbul de gaze</label>
+            </div>
+
+            <!-- Întrebarea 6 -->
+            <div class="question" data-correct="a">
+                <p>6. Care sunt ramificațiile traheei care ajung în plămâni?</p>
+                <label><input type="radio" name="q6" value="a"> Bronhiile</label>
+                <label><input type="radio" name="q6" value="b"> Alveolele</label>
+                <label><input type="radio" name="q6" value="c"> Arterele</label>
+            </div>
+
+            <!-- Întrebarea 7 -->
+            <div class="question" data-correct="b">
+                <p>7. Ce se întâmplă cu diafragma în timpul inspirației?</p>
+                <label><input type="radio" name="q7" value="a"> Se relaxează</label>
+                <label><input type="radio" name="q7" value="b"> Se contractă</label>
+                <label><input type="radio" name="q7" value="c"> Se dilată</label>
+            </div>
+
+            <!-- Întrebarea 8 -->
+            <div class="question" data-correct="c">
+                <p>8. Ce structură previne pătrunderea alimentelor în trahee?</p>
+                <label><input type="radio" name="q8" value="a"> Nasul</label>
+                <label><input type="radio" name="q8" value="b"> Laringele</label>
+                <label><input type="radio" name="q8" value="c"> Epiglota</label>
+            </div>
+
+            <!-- Întrebarea 9 -->
+            <div class="question" data-correct="a">
+                <p>9. Ce mușchi este esențial în procesul de respirație?</p>
+                <label><input type="radio" name="q9" value="a"> Diafragma</label>
+                <label><input type="radio" name="q9" value="b"> Bicepsul</label>
+                <label><input type="radio" name="q9" value="c"> Trapezul</label>
+            </div>
+
+            <!-- Întrebarea 10 -->
+            <div class="question" data-correct="b">
+                <p>10. Unde sunt localizate alveolele?</p>
+                <label><input type="radio" name="q10" value="a"> În trahee</label>
+                <label><input type="radio" name="q10" value="b"> În plămâni</label>
+                <label><input type="radio" name="q10" value="c"> În stomac</label>
+            </div>
+
+            <button type="button" onclick="verificaQuiz()">Verifică răspunsurile</button> <!-- Buton pentru evaluarea quiz-ului -->
+        </form>
+
+        <div id="rezultate"></div> <!-- Aici va fi afișat scorul și feedback-ul -->
+    </main>
+
+
+    <!-- Funcția care verifică răspunsurile utilizatorului-->
+<script>
+    function verificaQuiz() {
+        const intrebari = document.querySelectorAll('.question');
+        let scor = 0;
+        let feedback = "";
+
+        intrebari.forEach((intrebare, index) => {
+            const nume = `q${index + 1}`;
+            const raspunsCorect = intrebare.dataset.correct;
+            const raspunsUtilizator = document.querySelector(`input[name=${nume}]:checked`);
+
+            if (raspunsUtilizator) {
+                if (raspunsUtilizator.value === raspunsCorect) {
+                    scor++;
+                    feedback += `<p style='color: green;'>Întrebarea ${index + 1}: Corect!</p>`;
+                } else {
+                    feedback += `<p style='color: red;'>Întrebarea ${index + 1}: Greșit. Răspunsul corect este: <strong>${raspunsCorect.toUpperCase()}</strong></p>`;
+                }
+            } else {
+                feedback += `<p style='color: orange;'>Întrebarea ${index + 1}: Nicio variantă selectată. Răspuns corect: <strong>${raspunsCorect.toUpperCase()}</strong></p>`;
+            }
+        });
+
+        document.getElementById("rezultate").innerHTML = `<h2>Rezultat: ${scor} / ${intrebari.length}</h2>` + feedback;
+    }
+</script>
+
+<footer>
+    <p>Atestat Panda Ariana</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
